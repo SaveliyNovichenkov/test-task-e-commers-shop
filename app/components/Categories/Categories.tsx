@@ -1,15 +1,7 @@
-import { ICategory } from '../../interfaces/product.interface'
+import { ICategoriesProps, ICategoriesState } from './Categories.interface'
 import s from './Categories.module.scss'
-import { AppDispatch, useAppDispatch } from '@/store/store'
+import { useAppDispatch } from '@/store/store'
 import React, { useState } from 'react'
-
-interface ICategoriesState {
-	categories: ICategory[]
-}
-interface ICategoriesProps {
-	categories: ICategory[]
-	chooseCategory: (category: string) => (dispatch: AppDispatch) => void
-}
 
 export const Categories = ({
 	chooseCategory,

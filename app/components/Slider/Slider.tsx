@@ -1,19 +1,9 @@
 import s from './Slider.module.scss'
-import {
-	Children,
-	cloneElement,
-	ReactElement,
-	useEffect,
-	useState
-} from 'react'
+import { SliderInterface } from '@/components/Slider/Slider.interface'
+import { Children, cloneElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-interface CarouselProps {
-	pageWidthInPx: number
-	children: ReactElement[]
-}
-
-export const Slider = ({ children, pageWidthInPx }: CarouselProps) => {
+export const Slider = ({ children, pageWidthInPx }: SliderInterface) => {
 	const [pages, setPages] = useState<JSX.Element[]>([])
 	const [offset, setOffset] = useState<number>(0)
 	const PAGE_WIDTH = pageWidthInPx

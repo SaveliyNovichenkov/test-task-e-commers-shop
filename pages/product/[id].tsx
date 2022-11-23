@@ -1,5 +1,8 @@
 import { findPercent } from '../../app/helpers/findPercent'
-import { IProduct } from '../../app/interfaces/product.interface'
+import {
+	IProduct,
+	ProductPageProps
+} from '../../app/interfaces/product.interface'
 import Layout from '../../app/layout/Layout/Layout'
 import s from '../../styles/product.page.module.scss'
 import { Slider } from '@/components/Slider/Slider'
@@ -8,10 +11,6 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import Image from 'next/image'
 import { ParsedUrlQuery } from 'node:querystring'
 import React from 'react'
-
-interface ProductPageProps {
-	product: IProduct
-}
 
 const Product = (props: ProductPageProps) => {
 	const { isLoading, error, orders } = useAppSelector(

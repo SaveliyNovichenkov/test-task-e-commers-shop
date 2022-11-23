@@ -1,16 +1,10 @@
 import TrashIcon from '../../../public/trash.svg'
-import { IProduct } from '../../interfaces/product.interface'
 import s from './Order.module.scss'
 import AddToCartIcon from './add-cart.svg'
-import { AppDispatch, useAppDispatch } from '@/store/store'
+import { IOrder } from '@/components/Order/Order.interface'
+import { useAppDispatch } from '@/store/store'
 import Image from 'next/image'
 import React from 'react'
-
-interface IOrder {
-	item: IProduct
-	onDelete: (item: IProduct) => (dispatch: AppDispatch) => void
-	onAddAnotherItemToCart: (data: IProduct) => (dispatch: AppDispatch) => void
-}
 
 export const Order = ({ item, onDelete, onAddAnotherItemToCart }: IOrder) => {
 	const dispatch = useAppDispatch()

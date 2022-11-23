@@ -1,22 +1,16 @@
-import { IProduct } from '../../interfaces/product.interface'
 import s from './Product.module.scss'
-import { AppDispatch, useAppDispatch } from '@/store/store'
+import { ProductInterface } from '@/components/Product/Product.interface'
+import { useAppDispatch } from '@/store/store'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-interface productProps {
-	product: IProduct
-	onAddAnotherItemToCart: (data: IProduct) => (dispatch: AppDispatch) => void
-	deleteOrder: (data: IProduct) => (dispatch: AppDispatch) => void
-}
-
 export const Product = ({
 	product,
 	onAddAnotherItemToCart,
 	deleteOrder
-}: productProps) => {
+}: ProductInterface) => {
 	const dispatch = useAppDispatch()
 	let [active, setActive] = useState<boolean>(false)
 	const toggleActive = () => {

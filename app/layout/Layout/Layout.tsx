@@ -8,14 +8,10 @@ import {
 import { useAppDispatch, useAppSelector } from '../../store/store'
 import { Footer } from '../Footer/Footer'
 import { Header } from '../Header/Header'
-import React, { ReactNode, useEffect } from 'react'
+import { LayoutInterface } from './Layout.interface'
+import React, { useEffect } from 'react'
 
-interface LayoutProps {
-	children: ReactNode
-	forMainOrProduct: 'main' | 'product'
-}
-
-const Layout = ({ children, forMainOrProduct }: LayoutProps) => {
+const Layout = ({ children, forMainOrProduct }: LayoutInterface) => {
 	const dispatch = useAppDispatch()
 	const { products, currentItems, categories, isLoading, error, orders } =
 		useAppSelector(state => state.productReducer)

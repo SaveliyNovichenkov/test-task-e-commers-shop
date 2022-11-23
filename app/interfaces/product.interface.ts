@@ -1,6 +1,9 @@
 export interface IProductPage {
 	products: IProduct[]
 }
+export interface ProductPageProps {
+	product: IProduct
+}
 
 export interface IProduct {
 	id: number

@@ -1,55 +1,15 @@
-import { IProduct } from '../../interfaces/product.interface'
+import { HeaderInterface } from './Header.interface'
 import s from './Header.module.scss'
-import { Order } from '@/components/Order/Order'
-import { AppDispatch } from '@/store/store'
+import { ShowNothing, ShowOrders } from './showOrders/ShowOrders'
 import cn from 'classnames'
 import React, { useState } from 'react'
-
-interface IOrdersFoHeader {
-	orders?: IProduct[]
-	onDelete: (item: IProduct) => (dispatch: AppDispatch) => void
-	onAddAnotherItemToCart: (data: IProduct) => (dispatch: AppDispatch) => void
-	forMainOrProduct: 'main' | 'product' | undefined
-}
-
-const showOrders = (
-	orders: IProduct[],
-	onDelete: (item: IProduct) => (dispatch: AppDispatch) => void,
-	onAddAnotherItemToCart: (data: IProduct) => (dispatch: AppDispatch) => void
-) => {
-	let price = 0
-	orders.forEach(el => {
-		price += Math.floor(el.totalPrice)
-	})
-	return (
-		<>
-			<div className={s.wrapper}>
-				{orders.map(item => (
-					<Order
-						key={item.id}
-						item={item}
-						onDelete={onDelete}
-						onAddAnotherItemToCart={onAddAnotherItemToCart}
-					></Order>
-				))}
-			</div>
-			<span className={s.total_price}>
-				Цена: {new Intl.NumberFormat().format(price)} ₽
-			</span>
-		</>
-	)
-}
-
-const showNothing = () => {
-	return <div className={s.cartEmpty}>Корзина пуста</div>
-}
 
 export const Header = ({
 	forMainOrProduct,
 	orders,
 	onAddAnotherItemToCart,
 	onDelete
-}: IOrdersFoHeader) => {
+}: HeaderInterface) => {
 	let [cartOpen, setCartOpen] = useState<boolean>(false)
 
 	if (!orders) {
@@ -92,8 +52,8 @@ export const Header = ({
 					{cartOpen && (
 						<div className={s.shopCartWindow}>
 							{orders.length > 0
-								? showOrders(orders, onDelete, onAddAnotherItemToCart)
-								: showNothing()}
+								? ShowOrders({ orders, onAddAnotherItemToCart, onDelete })
+								: ShowNothing()}
 						</div>
 					)}
 				</div>
@@ -140,8 +100,8 @@ export const Header = ({
 					{cartOpen && (
 						<div className={s.shopCartWindow}>
 							{orders.length > 0
-								? showOrders(orders, onDelete, onAddAnotherItemToCart)
-								: showNothing()}
+								? ShowOrders({ orders, onAddAnotherItemToCart, onDelete })
+								: ShowNothing()}
 						</div>
 					)}
 				</div>
