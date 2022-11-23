@@ -1,0 +1,58 @@
+.item {
+  margin: 10px 20px 10px 20px;
+  width: 170px;
+  height: 230px;
+  background-color: #e8e7e6;
+  float: left;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  .img {
+    border-radius: 10px;
+  }
+
+  .title {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .buttonIcon {
+    border: none;
+    background-color: #e8e7e6;
+  }
+
+  .footerOrder {
+    display: flex;
+    gap: 8px;
+  }
+
+  .price {
+    font-size: 14px;
+    margin: 0 0 0 5px;
+    color: #7d250e;
+  }
+  .trashImg {
+    cursor: pointer;
+    margin-right: 5px;
+
+  }
+
+  .icon {
+    cursor: pointer;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    &:hover {
+      fill: #7d250e;
+    }
+  }
+
+
+  .count {
+    font-size: 14px;
+  }
+
+  &:last-child{
+    margin-bottom: 50px;
+  }
+
+}

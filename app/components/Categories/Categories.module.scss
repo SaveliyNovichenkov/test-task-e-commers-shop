@@ -1,0 +1,16 @@
+.categories {
+  > div {
+    color: #222;
+    display: inline-block;
+    background-color: #e3e1e1;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 0 0 25px 15px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    &:hover {
+      color: #050582;
+
+    }
+  }
+}

@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu:ital,wght@1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed&family=Ubuntu:ital,wght@1,300;1,400;1,500;1,700&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ece9e9;
+  color: #222;
+  font-weight: 300;
 }
 
 a {
@@ -12,7 +17,32 @@ a {
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 50px auto;
+}
+
+:root {
+  --bg-color: #191727;
+  --white: #fff;
+  --black: #000;
+  --primary: #ff4d23;
+  --primary-hover: #7d250e;
+  --purple: #6043b2;
+  --light-blue: #32A8E2;
+  --blue: #227C9D;
+  --gray-400: #9898ad;
+  --gray-500: #6B6B7B;
+  --gray-600: #5B5B6B;
+  --gray-700: #303241;
+  --gray-800: #353340;
+  --gray-900: #272532;
+  --gray-1000: #191820;
 }
 
 @media (prefers-color-scheme: dark) {

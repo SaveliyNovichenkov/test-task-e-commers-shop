@@ -1,0 +1,67 @@
+.main_container {
+  z-index: 10;
+  height: 720px;
+  width: 720px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .window_slider {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .all_items_container {
+      height: 100%;
+      display: flex;
+
+      transition: translate;
+      transition-property: transform;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+}
+
+.arrow_left_button {
+  z-index: 1000;
+  left: 10px;
+  bottom: 360px;
+  position: absolute;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  border: 3px #6B6B7B solid;
+  background-color: white;
+  cursor: pointer;
+  &:hover {
+    border: 3px #1b4086 solid;
+  }
+}
+
+.arrow_right_button {
+  bottom: 360px;
+  right: 30px;
+  position: absolute;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  border: 3px #6B6B7B solid;
+  background-color: white;
+  cursor: pointer;
+  &:hover {
+    border: 3px #1b4086 solid;
+  }
+}
+
+.swipe_pagination {
+  position: absolute;
+  height: 10px;
+  background-color: #1b4086;
+  bottom: 35px;
+  width: 720px;
+}
+
+.swiper_pagination_bullet {
+  height: 5px;
+  background-color: #6B6B7B;
+  width: 100px;
+}

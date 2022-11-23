@@ -1,0 +1,40 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  gap: 30px;
+  margin: 50px 80px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px 15px;
+  .img {
+    border-radius: 12px;
+  }
+  .title {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  .price {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+  .old_price {
+    margin-left: 20px;
+    text-decoration: line-through;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5B5B6B;
+    line-height: 32px;
+  }
+  .discount {
+    font-weight: 600;
+    color: #bc3212;
+    margin-left: 15px;
+  }
+  .options {
+    overflow: hidden;
+  }
+
+}
+
